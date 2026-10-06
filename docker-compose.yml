@@ -1,0 +1,19 @@
+# docker-compose.yml · ViaSerra Transportes
+#
+# Este arquivo sobe os dois sites de uma vez, no lugar de dois "docker run".
+# Complete as 4 lacunas marcadas com ____ e rode:  docker compose up -d
+# Não mude a indentação: no YAML, os espaços no começo da linha fazem parte da sintaxe.
+
+services:
+
+  portal:
+    image: ____                # a imagem que você publicou na Parte 2 (usuario/nome:tag)
+    ports:
+      - "____:80"              # porta do host: 8000 + XX
+    restart: unless-stopped
+
+  manutencao:
+    build: ____                # a pasta onde está o Dockerfile que você corrigiu na Parte 3
+    ports:
+      - "____:80"              # porta do host: 7000 + XX
+    restart: unless-stopped

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViaSerra Transportes · Portal</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <div class="marca">ViaSerra Transportes</div>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+      <a class="botao" href="#" id="link-manut">Aviso de manutenção</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Todo dia, 18 mil passageiros entre a serra e o litoral</h1>
+    <p>Linhas intermunicipais de ônibus ligando 22 cidades do Rio Grande do Sul, com saídas de hora em hora.</p>
+  </section>
+
+  <section id="servicos" class="cards">
+    <article><h2>Horários e linhas</h2><p>Consulte saídas, paradas e tempo de viagem de todas as linhas intermunicipais.</p></article>
+    <article><h2>Cartão ViaSerra</h2><p>Recarga do cartão de passagem e desconto para estudantes e idosos.</p></article>
+    <article><h2>Fretamento</h2><p>Ônibus para empresas, escolas e eventos, com motorista e seguro incluídos.</p></article>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>Fale com a gente</h2>
+    <p>Rodoviária de Caxias do Sul, guichê 4 · atendimento todos os dias, das 5h às 23h.</p>
+  </section>
+
+  <footer>
+    <!-- EDITE AS DUAS LINHAS ABAIXO COM O SEU NOME E A SUA MATRÍCULA -->
+    <p>Infraestrutura: TechInova Serviços · Responsável técnico: <strong id="responsavel">SEU NOME AQUI</strong></p>
+    <p>Matrícula: <strong id="matricula">00000000</strong></p>
+  </footer>
+
+  <script>
+    // O botão aponta para a página de manutenção: porta 7000 + os dois últimos dígitos da matrícula
+    const m = document.getElementById("matricula").textContent.trim();
+    const porta = 7000 + parseInt(m.slice(-2), 10);
+    document.getElementById("link-manut").href = "http://" + location.hostname + ":" + porta;
+  </script>
+</body>
+</html>
